@@ -20,16 +20,18 @@ export interface Project {
   featured?: boolean;
 }
 
+const publicAsset = (filename: string) => `${import.meta.env.BASE_URL}assets/${filename}`;
+
 export const PROJECTS: Project[] = [
   {
     id: 'ww2-military-motorcycle',
     title: 'WW2 Military Motorcycle with Sidecar',
     subtitle: 'World War II Military Vehicle & Hard-Surface Modeling',
     category: 'Vehicles',
-    thumbnail: '/assets/ww2_motorcycle.jpg',
+    thumbnail: publicAsset('ww2_motorcycle.jpg'),
     artstationImage: 'https://cdna.artstation.com/p/assets/images/images/102/929/370/large/soham-untitled.jpg?1791051534',
     gallery: [
-      { url: '/assets/ww2_motorcycle.jpg', label: 'Primary Studio Render' },
+      { url: publicAsset('ww2_motorcycle.jpg'), label: 'Primary Studio Render' },
       { url: 'https://cdna.artstation.com/p/assets/images/images/102/929/370/large/soham-untitled.jpg?1791051534', label: 'Full Resolution ArtStation Post' }
     ],
     software: ['Blender', 'Substance Painter', 'Blender Cycles'],
@@ -56,10 +58,10 @@ export const PROJECTS: Project[] = [
     title: 'Vintage Military Biplane',
     subtitle: 'Classic Aviation Aircraft 3D Modeling & Scene Dressing',
     category: 'Vehicles',
-    thumbnail: '/assets/biplane_aircraft.jpg',
+    thumbnail: publicAsset('biplane_aircraft.jpg'),
     artstationImage: 'https://cdnb.artstation.com/p/assets/images/images/102/928/361/large/soham-screenshot-2026-09-25-231641.jpg?1791048474',
     gallery: [
-      { url: '/assets/biplane_aircraft.jpg', label: 'Tarmac Aircraft Beauty Render' },
+      { url: publicAsset('biplane_aircraft.jpg'), label: 'Tarmac Aircraft Beauty Render' },
       { url: 'https://cdnb.artstation.com/p/assets/images/images/102/928/361/large/soham-screenshot-2026-09-25-231641.jpg?1791048474', label: 'Original ArtStation Screenshot' }
     ],
     software: ['Blender', 'Blender Cycles'],
@@ -86,10 +88,10 @@ export const PROJECTS: Project[] = [
     title: 'Vintage Workshop Drill Press',
     subtitle: 'Industrial Workshop Machinery & Hero Prop',
     category: 'Machinery',
-    thumbnail: '/assets/drill_press.webp',
+    thumbnail: publicAsset('drill_press.webp'),
     artstationImage: 'https://cdnb.artstation.com/p/assets/images/images/102/644/283/large/soham-untitled.webp?1790141889',
     gallery: [
-      { url: '/assets/drill_press.webp', label: 'Workshop Machinery Isolated Render' },
+      { url: publicAsset('drill_press.webp'), label: 'Workshop Machinery Isolated Render' },
       { url: 'https://cdnb.artstation.com/p/assets/images/images/102/644/283/large/soham-untitled.webp?1790141889', label: 'ArtStation High-Res Asset' }
     ],
     software: ['Blender', 'Blender Cycles'],
@@ -116,10 +118,10 @@ export const PROJECTS: Project[] = [
     title: 'A Quiet Night in the Old Study',
     subtitle: 'Atmospheric Nocturnal Interior & Volumetric Lighting',
     category: 'Environment',
-    thumbnail: '/assets/quiet_night_study.webp',
+    thumbnail: publicAsset('quiet_night_study.webp'),
     artstationImage: 'https://cdna.artstation.com/p/assets/images/images/102/636/112/large/soham-lanteri-output.webp?1790108677',
     gallery: [
-      { url: '/assets/quiet_night_study.webp', label: 'Volumetric Night Study Render' },
+      { url: publicAsset('quiet_night_study.webp'), label: 'Volumetric Night Study Render' },
       { url: 'https://cdna.artstation.com/p/assets/images/images/102/636/112/large/soham-lanteri-output.webp?1790108677', label: 'ArtStation Output' }
     ],
     software: ['Blender', 'Blender Cycles'],
