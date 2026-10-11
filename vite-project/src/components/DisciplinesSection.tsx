@@ -1,6 +1,6 @@
 import React from 'react';
-import { SKILLS_MATRIX, PIPELINE_STEPS } from '../data/projectsData';
-import { Layers, Building2, Palette, Sun, Cpu, Box, ArrowRight } from 'lucide-react';
+import { SKILLS_MATRIX } from '../data/projectsData';
+import { Layers, Building2, Palette, Sun, Cpu, Box } from 'lucide-react';
 
 export const DisciplinesSection: React.FC = () => {
   const getIcon = (iconName: string) => {
@@ -67,31 +67,6 @@ export const DisciplinesSection: React.FC = () => {
           ))}
         </div>
 
-        {/* Studio Pipeline Timeline */}
-        <div id="pipeline" className="pipeline-container-block">
-          <div className="pipeline-header">
-            <span className="pipeline-chip">PRODUCTION METHODOLOGY</span>
-            <h3 className="pipeline-headline">From Concept Blockout to Final Beauty Render</h3>
-            <p className="pipeline-lead">
-              A structured 5-stage production process ensuring quad-dominant topology, zero texture stretching, and physically plausible materials.
-            </p>
-          </div>
-
-          <div className="pipeline-steps-grid">
-            {PIPELINE_STEPS.map((st, idx) => (
-              <div key={idx} className="pipeline-step-card">
-                <div className="step-number">{st.step}</div>
-                <h4 className="step-title">{st.title}</h4>
-                <p className="step-desc">{st.desc}</p>
-                {idx < PIPELINE_STEPS.length - 1 && (
-                  <div className="step-connector">
-                    <ArrowRight size={16} />
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
       </div>
     </section>
   );

@@ -31,8 +31,6 @@ export const Navbar: React.FC = () => {
         <div className="nav-desktop-links">
           <a href="#portfolio" className="nav-link">Showcase</a>
           <a href="#disciplines" className="nav-link">Disciplines</a>
-          <a href="#pipeline" className="nav-link">Pipeline</a>
-          <a href="#lab" className="nav-link">3D Lab</a>
           <a href="#about" className="nav-link">About</a>
           <a href="#contact" className="nav-link">Contact</a>
         </div>
@@ -75,8 +73,6 @@ export const Navbar: React.FC = () => {
         <div className="mobile-drawer">
           <a href="#portfolio" onClick={() => setMobileMenuOpen(false)} className="mobile-link">Showcase</a>
           <a href="#disciplines" onClick={() => setMobileMenuOpen(false)} className="mobile-link">Disciplines</a>
-          <a href="#pipeline" onClick={() => setMobileMenuOpen(false)} className="mobile-link">Pipeline</a>
-          <a href="#lab" onClick={() => setMobileMenuOpen(false)} className="mobile-link">3D Lab</a>
           <a href="#about" onClick={() => setMobileMenuOpen(false)} className="mobile-link">About</a>
           <a href="#contact" onClick={() => setMobileMenuOpen(false)} className="mobile-link">Contact</a>
           <a

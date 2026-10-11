@@ -1,57 +1,72 @@
-# Soham Shinde â€” 3D Artist Portfolio
+# Soham Shinde — 3D Generalist Portfolio
 
-A responsive portfolio for 3D generalist and environment artist Soham Shinde. It showcases selected modeling and environment projects, production disciplines, and an interactive Three.js viewport.
+A modern, responsive portfolio website for **Soham Shinde**, a 3D Generalist specializing in hard-surface vehicle modeling, industrial machinery, and atmospheric environment art.
 
-## Features
+Live Site: https://supersidd2001.github.io/3d-generalist-portfolio-react/
 
-- Portfolio projects grouped by category, with project details and image galleries
-- Interactive Three.js viewport with shaded, wireframe, and point-cloud modes, lighting presets, and auto-rotation
-- Sections for skills, workflow, about, and contact information
-- Responsive layout for desktop and mobile screens
+---
 
-## Tech stack
+## Featured Projects
 
-- React 19 and TypeScript
-- Vite
-- Three.js
-- Bootstrap and Lucide React
+| Project | Category | Tools |
+|---|---|---|
+| WW2 Military Motorcycle with Sidecar | Vehicle | Blender, Substance Painter, Cycles |
+| Vintage Military Biplane | Vehicle | Blender, Cycles |
+| Vintage Workshop Drill Press | Machinery | Blender, Cycles |
+| A Quiet Night in the Old Study | Environment | Blender, Cycles |
 
-## Getting started
+All project images and artwork sourced directly from ArtStation: https://www.artstation.com/soham_shinde
 
-Install a current version of Node.js and npm, then run:
+---
+
+## Tech Stack
+
+- **Framework:** React 18 + TypeScript
+- **Build Tool:** Vite
+- **Styling:** Vanilla CSS (custom design system)
+- **Icons:** Lucide React
+- **Hosting:** GitHub Pages (via GitHub Actions)
+
+---
+
+## Getting Started
 
 ```bash
+# Install dependencies
 npm install
+
+# Run development server
 npm run dev
+
+# Build for production
+npm run build
 ```
 
-Open the local URL printed by Vite in your browser.
+---
 
-## Available scripts
+## Project Structure
 
-| Command | Description |
-| --- | --- |
-| `npm run dev` | Start the local development server |
-| `npm run build` | Type-check and create a production build in `dist/` |
-| `npm run preview` | Preview the production build locally |
-| `npm run lint` | Run Oxlint |
-
-## Project structure
-
-```text
-public/assets/       Portfolio artwork and project images
-src/components/      Page sections, project cards, modal, and 3D viewport
-src/data/            Project, skill, and workflow content
-src/App.tsx          Application layout
-src/index.css        Global styles
+```
+src/
++-- components/
+¦   +-- Navbar.tsx              # Fixed navigation bar
+¦   +-- Hero.tsx                # Landing hero section
+¦   +-- PortfolioSection.tsx    # Projects grid with filters
+¦   +-- ProjectCard.tsx         # Individual project card
+¦   +-- ProjectModal.tsx        # Fullscreen project detail modal
+¦   +-- DisciplinesSection.tsx  # Skills & competencies
+¦   +-- AboutSection.tsx        # About + software stack
+¦   +-- ContactSection.tsx      # Contact & ArtStation link
+¦   +-- Footer.tsx              # Site footer
++-- data/
+¦   +-- projectsData.ts         # All project data & skills matrix
++-- index.css                   # Global design system & styles
++-- App.tsx                     # Root component
 ```
 
-## Project content
+---
 
-Project descriptions and gallery data are maintained in `src/data/projectsData.ts`. Local artwork is served from `public/assets/`; the project also references selected images hosted on ArtStation.
+## Contact
 
-The contact form currently displays a client-side confirmation only. It does not send or store messages; use the listed email address or ArtStation link to contact the artist.
-
-## Environment files
-
-No environment variables are required to run this project. Local `.env` files are ignored by Git and should not be committed.
+- **Email:** sohamshinde242004@gmail.com
+- **ArtStation:** https://www.artstation.com/soham_shinde

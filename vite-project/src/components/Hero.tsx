@@ -1,5 +1,4 @@
 import React from 'react';
-import { ThreeCanvas } from './ThreeCanvas';
 import { ArrowDown, ExternalLink, Sparkles, Layers, Box, Compass } from 'lucide-react';
 
 export const Hero: React.FC = () => {
@@ -79,22 +78,6 @@ export const Hero: React.FC = () => {
                 <div className="stat-label">Authentic Battlefield Weathering</div>
               </div>
             </div>
-          </div>
-        </div>
-
-        {/* Right Column: Interactive 3D Turntable Viewport */}
-        <div className="hero-viewport-column">
-          <div className="viewport-frame">
-            <div className="viewport-header-bar">
-              <div className="window-dots">
-                <span className="dot red"></span>
-                <span className="dot yellow"></span>
-                <span className="dot green"></span>
-              </div>
-              <div className="window-title">3D Viewport // Hard-Surface Construction [Interactive]</div>
-              <div className="window-status">60 FPS • WEBGL</div>
-            </div>
-            <ThreeCanvas />
           </div>
         </div>
       </div>

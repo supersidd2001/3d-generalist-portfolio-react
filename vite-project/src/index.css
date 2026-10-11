@@ -3,13 +3,13 @@
    ============================================================ */
 
 :root {
-  --bg-primary: #090b10;
-  --bg-secondary: #0f131c;
-  --bg-tertiary: #161c28;
-  --bg-card: rgba(18, 23, 34, 0.75);
-  --bg-glass: rgba(15, 19, 28, 0.85);
+  --bg-primary: #0d1117;
+  --bg-secondary: #161b27;
+  --bg-tertiary: #1e2636;
+  --bg-card: rgba(26, 33, 50, 0.9);
+  --bg-glass: rgba(20, 27, 42, 0.92);
   
-  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-subtle: rgba(255, 255, 255, 0.12);
   --border-hover: rgba(0, 240, 255, 0.4);
   --border-active: #00f0ff;
 
@@ -19,9 +19,9 @@
   --accent-violet: #8b5cf6;
   --accent-emerald: #10b981;
 
-  --text-primary: #f8fafc;
-  --text-secondary: #94a3b8;
-  --text-muted: #64748b;
+  --text-primary: #f1f5f9;
+  --text-secondary: #b0bdd0;
+  --text-muted: #6e8098;
 
   --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-display: 'Space Grotesk', sans-serif;
@@ -49,10 +49,14 @@ html {
   color-scheme: dark;
 }
 
+html, body {
+  background-color: #0d1117;
+}
+
 body {
   font-family: var(--font-sans);
-  background-color: var(--bg-primary);
-  color: var(--text-primary);
+  background-color: #0d1117;
+  color: #f1f5f9;
   line-height: 1.6;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
@@ -361,16 +365,17 @@ img {
   display: flex;
   align-items: center;
   overflow: hidden;
+  background: #0d1117;
 }
 
 .hero-background-grid {
   position: absolute;
   inset: 0;
   background-image: 
-    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
   background-size: 48px 48px;
-  mask-image: radial-gradient(circle at 50% 40%, black 30%, transparent 80%);
+  mask-image: radial-gradient(circle at 50% 40%, black 40%, transparent 85%);
   pointer-events: none;
 }
 
@@ -379,9 +384,9 @@ img {
   width: 500px;
   height: 500px;
   border-radius: 50%;
-  filter: blur(140px);
+  filter: blur(160px);
   pointer-events: none;
-  opacity: 0.18;
+  opacity: 0.07;
 }
 .glow-1 {
   background: #00f0ff;
@@ -440,12 +445,13 @@ img {
   line-height: 1.12;
   letter-spacing: -0.03em;
   color: #ffffff;
+  text-shadow: 0 2px 20px rgba(0,0,0,0.5);
   margin-bottom: 22px;
 }
 
 .hero-subtitle {
   font-size: 1.12rem;
-  color: var(--text-secondary);
+  color: #c8d6e8;
   line-height: 1.65;
   margin-bottom: 34px;
   max-width: 580px;
@@ -490,7 +496,7 @@ img {
 }
 .stat-label {
   font-size: 0.75rem;
-  color: var(--text-muted);
+  color: #8eaac8;
 }
 
 /* Hero Viewport Frame */
@@ -683,6 +689,7 @@ img {
 .portfolio-section {
   padding: 100px 0;
   position: relative;
+  background: linear-gradient(180deg, var(--bg-primary) 0%, #111827 100%);
 }
 
 .filter-controls-bar {
@@ -781,19 +788,20 @@ img {
 }
 
 .project-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border-subtle);
+  background: linear-gradient(145deg, rgba(30, 40, 60, 0.95) 0%, rgba(22, 30, 45, 0.98) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.14);
   border-radius: var(--radius-lg);
   overflow: hidden;
   transition: all var(--transition-normal);
   display: flex;
   flex-direction: column;
   backdrop-filter: blur(12px);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
 }
 .project-card:hover {
   transform: translateY(-6px);
   border-color: var(--border-hover);
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5), 0 0 25px rgba(0, 240, 255, 0.12);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 30px rgba(0, 240, 255, 0.15);
 }
 
 .card-media-wrapper {
@@ -1390,7 +1398,9 @@ img {
    ============================================================ */
 .disciplines-section {
   padding: 100px 0;
-  background: linear-gradient(to bottom, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+  background: linear-gradient(180deg, #111827 0%, #0f172a 60%, #161b27 100%);
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
 }
 
 .disciplines-grid {
@@ -1401,18 +1411,22 @@ img {
 }
 
 .discipline-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border-subtle);
+  background: linear-gradient(145deg, rgba(26, 35, 56, 0.98) 0%, rgba(20, 27, 45, 0.98) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-left: 3px solid rgba(0, 240, 255, 0.4);
   border-radius: var(--radius-lg);
   padding: 30px;
   display: flex;
   flex-direction: column;
   transition: all var(--transition-normal);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
 }
 .discipline-card:hover {
   transform: translateY(-4px);
-  border-color: rgba(0, 240, 255, 0.35);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+  border-left-color: var(--accent-cyan);
+  border-color: rgba(0, 240, 255, 0.3);
+  border-left-color: var(--accent-cyan);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 240, 255, 0.1);
 }
 
 .disc-card-top {
@@ -1650,7 +1664,8 @@ img {
    ============================================================ */
 .about-section {
   padding: 100px 0;
-  background: var(--bg-primary);
+  background: linear-gradient(180deg, #0d1117 0%, #131c2e 50%, #0d1117 100%);
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
 }
 
 .about-grid {
@@ -1701,12 +1716,12 @@ img {
 
 /* Software Stack Card */
 .software-stack-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border-subtle);
+  background: linear-gradient(145deg, rgba(30, 40, 62, 0.98) 0%, rgba(22, 30, 50, 0.98) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: var(--radius-xl);
   padding: 34px;
   backdrop-filter: blur(16px);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), 0 0 30px rgba(0, 240, 255, 0.06);
 }
 .stack-card-header {
   display: flex;
@@ -1795,7 +1810,8 @@ img {
    ============================================================ */
 .contact-section {
   padding: 100px 0;
-  background: linear-gradient(to bottom, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+  background: linear-gradient(180deg, #111827 0%, #0d1420 60%, #0d1117 100%);
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
 }
 
 .contact-grid {
