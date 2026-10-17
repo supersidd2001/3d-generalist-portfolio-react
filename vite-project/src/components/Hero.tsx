@@ -14,22 +14,22 @@ export const Hero: React.FC = () => {
           <div className="hero-eyebrow">
             <span className="eyebrow-chip">
               <Sparkles size={13} className="chip-icon" />
-              <span>3D GENERALIST • VEHICLES & ENVIRONMENTS</span>
+              <span>3D ARTIST • MODELLING & RIGGING SPECIALIST</span>
             </span>
-            <span className="eyebrow-pipeline">BLENDER • SUBSTANCE PAINTER • CYCLES</span>
+            <span className="eyebrow-pipeline">MAYA • BLENDER • SUBSTANCE PAINTER</span>
           </div>
 
           <h1 className="hero-title">
-            Crafting Hard-Surface <span className="gradient-text">Vehicles</span>, Machinery & Atmospheric Worlds.
+            Crafting Production-Ready <span className="gradient-text">3D Assets</span>, Skeletal Rigs & Atmospheric Worlds.
           </h1>
 
           <p className="hero-subtitle">
-            Welcome to the 3D portfolio of <strong>Soham Shinde</strong>. Featuring hard-surface military vehicles (WW2 motorcycle with sidecar, vintage biplane), industrial machinery (workshop drill press), and atmospheric interior environments rendered with physically based lighting.
+            3D Artist with hands-on production experience across the full asset pipeline — modelling, rigging, texturing, environment design, and animation. Completed a 3-month studio internship at <strong>SUENOS Entertainment</strong> and contributed to the shipped project <strong>Code Within</strong>. Trained at <strong>TRON Institute of Animation (Sandip University)</strong> with a strong foundation in Autodesk Maya and Blender. Seeking an entry-level 3D modelling / rigging role.
           </p>
 
           <div className="hero-actions">
             <a href="#portfolio" className="btn-primary">
-              <span>View Portfolio</span>
+              <span>View 3D Showcase</span>
               <ArrowDown size={16} />
             </a>
 
@@ -54,18 +54,8 @@ export const Hero: React.FC = () => {
                 <Layers size={18} />
               </div>
               <div>
-                <div className="stat-value">Hard-Surface</div>
-                <div className="stat-label">Military Vehicles & Props</div>
-              </div>
-            </div>
-
-            <div className="stat-card">
-              <div className="stat-icon-wrapper">
-                <Compass size={18} />
-              </div>
-              <div>
-                <div className="stat-value">Environments</div>
-                <div className="stat-label">Atmospheric & Volumetric Lighting</div>
+                <div className="stat-value">3D Modelling</div>
+                <div className="stat-label">Maya, Blender & Clean Topology</div>
               </div>
             </div>
 
@@ -74,8 +64,18 @@ export const Hero: React.FC = () => {
                 <Box size={18} />
               </div>
               <div>
-                <div className="stat-value">Substance PBR</div>
-                <div className="stat-label">Authentic Battlefield Weathering</div>
+                <div className="stat-value">Rigging & Animation</div>
+                <div className="stat-label">Skeletal Rigs & 12 Principles</div>
+              </div>
+            </div>
+
+            <div className="stat-card">
+              <div className="stat-icon-wrapper">
+                <Compass size={18} />
+              </div>
+              <div>
+                <div className="stat-value">PBR & Environments</div>
+                <div className="stat-label">Substance Painter, Cycles & V-Ray</div>
               </div>
             </div>
           </div>

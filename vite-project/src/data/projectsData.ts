@@ -147,59 +147,129 @@ export const PROJECTS: Project[] = [
 
 export const SKILLS_MATRIX = [
   {
-    category: 'Hard-Surface Modeling',
-    level: 95,
+    category: '3D Modelling & Topology',
+    level: 96,
     icon: 'Layers',
-    tools: 'Blender, Maya',
-    description: 'Detailed military vehicles (motorcycles, biplanes), industrial machinery, clean quad topology, and precision mechanical assemblies.'
+    tools: 'Maya, Blender, ZBrush',
+    description: 'Production-ready hard-surface assets, military vehicles, industrial machinery, and props with clean quad topology and optimized polycounts.'
   },
   {
-    category: 'Hero Prop Modeling',
+    category: 'Rigging & Character Setup',
     level: 92,
     icon: 'Cpu',
-    tools: 'Blender',
-    description: 'Authentic mechanical props such as vintage drill presses, engines, suspension systems, and workshop tools with real-world proportions.'
+    tools: 'Autodesk Maya, Blender',
+    description: 'Skeletal rigs for characters and props, bone hierarchies, skin weighting, inverse kinematics (IK/FK), and animation-ready controls.'
   },
   {
-    category: 'Texturing & PBR LookDev',
-    level: 90,
+    category: 'PBR Texturing & LookDev',
+    level: 93,
     icon: 'Palette',
-    tools: 'Substance Painter, Blender',
-    description: 'Battlefield weathering, rust, dirt, dust, chipped paint, metal scratches, roughness mapping, and authentic surface wear.'
+    tools: 'Substance Painter, Photoshop',
+    description: 'Multi-layer PBR texturing, realistic battlefield wear, chipping, dirt, rust, roughness maps, and seamless UV coordinate optimization.'
   },
   {
     category: 'Environment Art & Lighting',
     level: 94,
     icon: 'Sun',
-    tools: 'Blender Cycles',
-    description: 'Atmospheric scene composition, volumetric lighting, warm interior mood lighting, natural shadows, and storytelling set dressing.'
+    tools: 'Maya, Blender Cycles, V-Ray',
+    description: 'Atmospheric scene composition, volumetric lighting, interior set dressing, physically based shaders, and cinematic portfolio renders.'
   }
 ];
+
+export const RESUME_DATA = {
+  name: 'Soham Shinde',
+  title: '3D Artist | Modelling & Rigging Specialist',
+  phone: '+91-9892079681',
+  email: 'sohamshinde242004@gmail.com',
+  artstationUrl: 'https://www.artstation.com/soham_shinde',
+  linkedinUrl: 'https://www.linkedin.com/in/soham-shinde-3d',
+  summary:
+    '3D Artist with hands-on production experience across the full asset pipeline — modelling, rigging, texturing, environment design, and animation. Completed a 3-month studio internship and contributed to the shipped project Code Within. Trained at TRON Institute of Animation (Sandip University) with a strong foundation in Autodesk Maya and Blender. Seeking an entry-level 3D modelling / rigging role.',
+  internship: {
+    role: '3D Artist Intern',
+    company: 'SUENOS Entertainment Pvt Ltd',
+    location: 'Pune, Maharashtra, India',
+    period: 'May 2026 – July 2026',
+    highlights: [
+      'Modelled production-ready 3D assets in Maya and Blender, ensuring clean topology and optimized polycounts',
+      'Textured and designed environments aligned with the project’s visual style and art direction',
+      'Rigged characters and props for animation, collaborating with the team to meet production deadlines',
+      'Contributed to animation tasks and iterated on deliverables based on mentor and lead feedback'
+    ]
+  },
+  shippedProject: {
+    title: 'Code Within',
+    tools: 'Maya, Blender, Substance Painter',
+    date: 'Jun 2026',
+    highlights: [
+      'Served as rigging artist, building skeletal rigs for characters and props',
+      'Modelled and textured assets and designed 3D environments for key scenes',
+      'Produced character and scene animations, applying the 12 principles of animation'
+    ]
+  },
+  education: [
+    {
+      institution: 'TRON Institute of Animation, Sandip University',
+      degree: 'B.Voc. in Animation and Graphic Design',
+      location: 'Nashik, Maharashtra, India',
+      period: 'Aug. 20XX – May 20XX',
+      areas: [
+        '3D & VFX: 3D Character Modeling, 3D FX & Dynamics, Advanced Visual Effects, Rigging & Animation, Rendering & Compositing, Lighting (V-Ray, Mental Ray)',
+        'Animation: Character Animation, 2D Animation Complete Pipeline',
+        'Design & Post: Graphic Design, Digital & Motion Graphics, Principles of Design & Color Theory, Film Editing, Audio Editing, Film Making'
+      ]
+    },
+    {
+      institution: 'National Institute of Open Schooling (NIOS)',
+      degree: 'Senior Secondary (Class XII) — Commerce',
+      location: 'Mangalore, India',
+      period: 'Completed April 2023'
+    },
+    {
+      institution: 'National Institute of Open Schooling (NIOS)',
+      degree: 'Secondary (Class X)',
+      location: 'Dubai, UAE',
+      period: 'Completed June 2021'
+    }
+  ],
+  skills: {
+    software3D: ['Autodesk Maya', 'Blender', 'ZBrush'],
+    software2D: ['Adobe Photoshop', 'Adobe After Effects', 'Substance Painter', 'Premiere Pro'],
+    coreSkills: ['3D Modelling', 'Rigging', 'Texturing', 'Environment Design', 'Character Animation'],
+    concepts: ['Topology', 'UV Mapping', 'Lighting', 'Composition', '12 Principles of Animation']
+  },
+  extracurricular: {
+    achievement: '2nd Place — 102 kg Weight Class',
+    championship: 'Karnataka State Weightlifting Association — State Youth Weightlifting Championship',
+    location: 'Karnataka, India',
+    date: 'Nov. 2022'
+  }
+};
 
 export const PIPELINE_STEPS = [
   {
     step: '01',
-    title: 'Reference & Proportions',
-    desc: 'Gathering historical and mechanical blueprints to establish accurate scale, silhouette, and component placement.'
+    title: 'Reference & Blueprint Setup',
+    desc: 'Analyzing mechanical schematics and visual reference to lock scale, silhouette, and component proportions.'
   },
   {
     step: '02',
-    title: 'Hard-Surface 3D Modeling',
-    desc: 'Crafting clean geometry in Blender—from engine blocks and wing struts to mechanical drill spindles and desk props.'
+    title: 'Production 3D Modelling',
+    desc: 'Crafting clean quad topology and optimized geometry in Maya and Blender for vehicles, machinery, and props.'
   },
   {
     step: '03',
-    title: 'UV Mapping & Seam Layout',
-    desc: 'Optimizing texture coordinates, eliminating distortion, and packing islands to ensure sharp texel density.'
+    title: 'Rigging & Kinematics',
+    desc: 'Constructing robust bone hierarchies, IK/FK solvers, deformation joints, and animation controls.'
   },
   {
     step: '04',
-    title: 'Substance Painter Texturing',
-    desc: 'Building multi-layer PBR materials: base paint, surface micro-scratches, edge wear, rust, grease, and battlefield grime.'
+    title: 'PBR Texturing & Weathering',
+    desc: 'Authoring multi-layer Substance Painter materials: wear, chipping, grease, rust, and surface micro-details.'
   },
   {
     step: '05',
-    title: 'Cycles Cinematic Rendering',
-    desc: 'Setting up physically plausible lights, volumetric fog rays, studio cyclorama, and rendering final high-res portfolios.'
+    title: 'Lighting & LookDev',
+    desc: 'Setting up physically based shaders, volumetric atmospheres, and studio light rigs for cinematic output.'
   }
 ];

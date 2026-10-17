@@ -1,13 +1,15 @@
 import React from 'react';
-import { ExternalLink, CheckCircle2, Award, Briefcase, Sparkles } from 'lucide-react';
+import { ExternalLink, CheckCircle2, Award, Briefcase, Sparkles, GraduationCap, Trophy, Film } from 'lucide-react';
+import { RESUME_DATA } from '../data/projectsData';
 
 export const AboutSection: React.FC = () => {
   const softwareStack = [
-    { name: 'Blender', role: 'Primary 3D Modeling & Scene Assembly', level: 'Expert' },
-    { name: 'Substance Painter', role: 'PBR Texturing & Surface Weathering', level: 'Advanced' },
-    { name: 'Blender Cycles', role: 'Physically Based Lighting & LookDev', level: 'Advanced' },
-    { name: 'Autodesk Maya', role: 'Hard-Surface Modeling & Layout', level: 'Proficient' },
-    { name: 'Adobe Photoshop', role: 'Texture Adjustments & Post-Processing', level: 'Advanced' },
+    { name: 'Autodesk Maya', role: '3D Character/Prop Modeling, Rigging & Layout', level: 'Expert' },
+    { name: 'Blender', role: 'Hard-Surface Modeling, Cycles LookDev & Lighting', level: 'Expert' },
+    { name: 'ZBrush', role: 'Digital Sculpting & High-Resolution Topology', level: 'Proficient' },
+    { name: 'Substance Painter', role: 'PBR Texturing, Weathering & Material Authoring', level: 'Advanced' },
+    { name: 'Adobe Photoshop', role: 'Texture Adjustments & LookDev Concepts', level: 'Advanced' },
+    { name: 'Adobe After Effects & Premiere Pro', role: 'Compositing, VFX & Showreel Assembly', level: 'Proficient' },
   ];
 
   return (
@@ -26,33 +28,60 @@ export const AboutSection: React.FC = () => {
             </h2>
 
             <p className="about-lead">
-              A passionate <strong>3D Generalist</strong> specializing in hard-surface vehicle modeling, industrial machinery, and atmospheric environment lighting.
+              <strong>3D Artist | Modelling & Rigging Specialist</strong> with hands-on production experience across the full asset pipeline.
             </p>
 
             <p className="about-text">
-              My portfolio showcases complex mechanical assemblies—from the historical WW2 military motorcycle with sidecar and vintage biplane aircraft to industrial machinery like the cast-iron drill press, and evocative environments like the quiet nocturnal study room. I emphasize clean geometry, authentic surface wear, and realistic materials using Blender, Substance Painter, and Cycles.
+              {RESUME_DATA.summary}
             </p>
 
             <div className="about-bullet-points">
               <div className="about-bullet">
                 <CheckCircle2 size={18} className="bullet-check" />
                 <div>
-                  <strong>Mechanical & Vehicle Modeling:</strong> Creating realistic engines, suspension linkages, aviation airframes, and workshop tools with real-world scale.
+                  <strong>Production 3D Modelling & Topology:</strong> Modelling production-ready 3D assets in Autodesk Maya and Blender, ensuring clean topology and optimized polycounts.
                 </div>
               </div>
 
               <div className="about-bullet">
                 <CheckCircle2 size={18} className="bullet-check" />
                 <div>
-                  <strong>Substance Painter PBR Texturing:</strong> Crafting authentic aged surfaces—scratches, dust, grease, rust, and battlefield wear.
+                  <strong>Character & Prop Rigging:</strong> Building robust skeletal rigs for characters and props with intuitive animation controls and skin deformation.
                 </div>
               </div>
 
               <div className="about-bullet">
                 <CheckCircle2 size={18} className="bullet-check" />
                 <div>
-                  <strong>Atmospheric & Studio Lighting:</strong> Masterful illumination with volumetric dust rays, warm kerosene lantern glows, and crisp studio lighting.
+                  <strong>Substance PBR Texturing & Environments:</strong> Designing atmospheric 3D environments and texturing assets aligned with visual style and art direction.
                 </div>
+              </div>
+
+              <div className="about-bullet">
+                <CheckCircle2 size={18} className="bullet-check" />
+                <div>
+                  <strong>Animation & 12 Principles:</strong> Producing character and scene animations, collaborating closely with leads to iterate and meet studio deadlines.
+                </div>
+              </div>
+            </div>
+
+            {/* Experience & Shipped Project Callout */}
+            <div className="experience-card-block">
+              <div className="exp-card-header">
+                <Briefcase size={18} className="exp-icon" />
+                <div>
+                  <h4 className="exp-title">{RESUME_DATA.internship.role} — {RESUME_DATA.internship.company}</h4>
+                  <span className="exp-period">{RESUME_DATA.internship.period} • {RESUME_DATA.internship.location}</span>
+                </div>
+              </div>
+              <ul className="exp-list">
+                {RESUME_DATA.internship.highlights.map((item, idx) => (
+                  <li key={idx}>{item}</li>
+                ))}
+              </ul>
+              <div className="shipped-project-pill">
+                <Film size={14} />
+                <span>Shipped Project: <strong>{RESUME_DATA.shippedProject.title}</strong> ({RESUME_DATA.shippedProject.tools}) — Rigging & 3D Environments</span>
               </div>
             </div>
 
@@ -71,17 +100,17 @@ export const AboutSection: React.FC = () => {
               </a>
 
               <a href="#contact" className="btn-secondary">
-                <span>Contact for Projects</span>
+                <span>Contact for Roles</span>
               </a>
             </div>
           </div>
 
-          {/* Right Column: Software Stack & Technical Card */}
+          {/* Right Column: Software Stack, Education & Awards */}
           <div className="about-stack-col">
             <div className="software-stack-card">
               <div className="stack-card-header">
                 <Award size={18} className="stack-icon" />
-                <h4>Software & Production Stack</h4>
+                <h4>Technical Software & Core Skills</h4>
               </div>
 
               <div className="software-list">
@@ -96,11 +125,39 @@ export const AboutSection: React.FC = () => {
                 ))}
               </div>
 
+              {/* Education section */}
+              <div className="about-education-box">
+                <div className="edu-header">
+                  <GraduationCap size={18} className="edu-icon" />
+                  <h4>Education & Training</h4>
+                </div>
+                <div className="edu-item">
+                  <div className="edu-title">TRON Institute of Animation, Sandip University</div>
+                  <div className="edu-sub">B.Voc. in Animation & Graphic Design • Nashik, Maharashtra, India</div>
+                  <p className="edu-details">
+                    Comprehensive training in 3D Character Modeling, 3D FX & Dynamics, Advanced Visual Effects, Rigging & Animation, Rendering & Compositing, Lighting (V-Ray, Mental Ray), and 2D Animation Pipeline.
+                  </p>
+                </div>
+                <div className="edu-item">
+                  <div className="edu-title">National Institute of Open Schooling (NIOS)</div>
+                  <div className="edu-sub">Senior Secondary (XII - Mangalore) & Secondary (X - Dubai, UAE)</div>
+                </div>
+              </div>
+
+              {/* Extracurricular Award */}
+              <div className="extracurricular-badge-box">
+                <Trophy size={16} className="trophy-icon" />
+                <div className="trophy-text">
+                  <strong>{RESUME_DATA.extracurricular.achievement}</strong>
+                  <span>{RESUME_DATA.extracurricular.championship} ({RESUME_DATA.extracurricular.location}, {RESUME_DATA.extracurricular.date})</span>
+                </div>
+              </div>
+
               <div className="artist-availability-notice">
                 <Briefcase size={16} className="avail-icon" />
                 <div className="avail-text">
-                  <strong>Open for 3D Opportunities:</strong>
-                  <span>Available for 3D Generalist, Hard-Surface Modeler, and Prop Artist roles.</span>
+                  <strong>Seeking Entry-Level Roles:</strong>
+                  <span>Available for 3D Modelling, Rigging Specialist, and 3D Generalist positions.</span>
                 </div>
               </div>
             </div>

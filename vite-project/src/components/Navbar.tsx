@@ -24,7 +24,7 @@ export const Navbar: React.FC = () => {
           </div>
           <div className="brand-text">
             <span className="brand-name">SOHAM SHINDE</span>
-            <span className="brand-role">3D GENERALIST</span>
+            <span className="brand-role">3D ARTIST • MODELLING & RIGGING</span>
           </div>
         </a>
 
@@ -32,15 +32,15 @@ export const Navbar: React.FC = () => {
         <div className="nav-desktop-links">
           <a href="#portfolio" className="nav-link">Showcase</a>
           <a href="#disciplines" className="nav-link">Disciplines</a>
-          <a href="#about" className="nav-link">About</a>
+          <a href="#about" className="nav-link">About & Experience</a>
           <a href="#contact" className="nav-link">Contact</a>
         </div>
 
         {/* Right CTA / ArtStation link & Theme Toggle */}
         <div className="nav-actions">
-          <div className="status-badge" title="Actively reviewing opportunities">
+          <div className="status-badge" title="Seeking entry-level 3D modelling / rigging role">
             <span className="status-dot"></span>
-            <span className="status-text">Available for Projects</span>
+            <span className="status-text">Seeking 3D Modelling / Rigging Role</span>
           </div>
 
           <ThemeToggle />
