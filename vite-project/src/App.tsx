@@ -9,6 +9,7 @@ import { AboutSection } from './components/AboutSection';
 import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
 import { ProjectModal } from './components/ProjectModal';
+import { ThemeProvider } from './context/ThemeContext';
 import './index.css';
 
 export function App() {
@@ -25,40 +26,41 @@ export function App() {
   };
 
   return (
-    <div className="portfolio-app">
-      {/* Navigation Bar */}
-      <Navbar />
+    <ThemeProvider>
+      <div className="portfolio-app">
+        {/* Navigation Bar */}
+        <Navbar />
 
-      {/* Main Content */}
-      <main>
-        {/* Cinematic Hero with Interactive Three.js Viewport */}
-        <Hero />
+        {/* Main Content */}
+        <main>
+          {/* Cinematic Hero with Interactive Three.js Viewport */}
+          <Hero />
 
-        {/* ArtStation Featured Projects Showcase & Filters */}
-        <PortfolioSection onOpenModal={handleOpenModal} />
+          {/* ArtStation Featured Projects Showcase & Filters */}
+          <PortfolioSection onOpenModal={handleOpenModal} />
 
-        {/* 3D Generalist Disciplines & Production Pipeline */}
-        <DisciplinesSection />
+          {/* 3D Generalist Disciplines & Production Pipeline */}
+          <DisciplinesSection />
 
+          {/* About Soham Shinde & Software Stack */}
+          <AboutSection />
 
-        {/* About Soham Shinde & Software Stack */}
-        <AboutSection />
+          {/* Direct Contact & ArtStation Connection */}
+          <ContactSection />
+        </main>
 
-        {/* Direct Contact & ArtStation Connection */}
-        <ContactSection />
-      </main>
+        {/* Footer */}
+        <Footer />
 
-      {/* Footer */}
-      <Footer />
-
-      {/* Fullscreen Interactive Project Breakdown Modal */}
-      {activeModalProject && (
-        <ProjectModal
-          project={activeModalProject}
-          onClose={handleCloseModal}
-        />
-      )}
-    </div>
+        {/* Fullscreen Interactive Project Breakdown Modal */}
+        {activeModalProject && (
+          <ProjectModal
+            project={activeModalProject}
+            onClose={handleCloseModal}
+          />
+        )}
+      </div>
+    </ThemeProvider>
   );
 }
 

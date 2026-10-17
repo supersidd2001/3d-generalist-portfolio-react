@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { ExternalLink, Menu, X, Box } from 'lucide-react';
+import { ThemeToggle } from './ThemeToggle';
 
 export const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -35,12 +36,14 @@ export const Navbar: React.FC = () => {
           <a href="#contact" className="nav-link">Contact</a>
         </div>
 
-        {/* Right CTA / ArtStation link */}
+        {/* Right CTA / ArtStation link & Theme Toggle */}
         <div className="nav-actions">
           <div className="status-badge" title="Actively reviewing opportunities">
             <span className="status-dot"></span>
             <span className="status-text">Available for Projects</span>
           </div>
+
+          <ThemeToggle />
 
           <a
             href="https://www.artstation.com/soham_shinde"
@@ -75,6 +78,12 @@ export const Navbar: React.FC = () => {
           <a href="#disciplines" onClick={() => setMobileMenuOpen(false)} className="mobile-link">Disciplines</a>
           <a href="#about" onClick={() => setMobileMenuOpen(false)} className="mobile-link">About</a>
           <a href="#contact" onClick={() => setMobileMenuOpen(false)} className="mobile-link">Contact</a>
+          
+          <div className="mobile-theme-wrapper">
+            <span className="mobile-theme-heading">Appearance</span>
+            <ThemeToggle variant="segmented" />
+          </div>
+
           <a
             href="https://www.artstation.com/soham_shinde"
             target="_blank"

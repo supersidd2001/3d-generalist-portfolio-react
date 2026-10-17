@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
 import { Eye, RotateCw, Sparkles, Box } from 'lucide-react';
+import { useTheme } from '../context/ThemeContext';
 
 interface ThreeCanvasProps {
   interactive?: boolean;
@@ -8,6 +9,7 @@ interface ThreeCanvasProps {
 
 export const ThreeCanvas: React.FC<ThreeCanvasProps> = () => {
   const mountRef = useRef<HTMLDivElement>(null);
+  const { theme } = useTheme();
   const [renderMode, setRenderMode] = useState<'solid' | 'wireframe' | 'points'>('solid');
   const [autoRotate, setAutoRotate] = useState<boolean>(true);
   const [lightPreset, setLightPreset] = useState<'cyan' | 'amber' | 'violet' | 'emerald'>('cyan');
@@ -17,6 +19,8 @@ export const ThreeCanvas: React.FC<ThreeCanvasProps> = () => {
   const cameraRef = useRef<THREE.PerspectiveCamera | null>(null);
   const meshGroupRef = useRef<THREE.Group | null>(null);
   const pointLightRef = useRef<THREE.PointLight | null>(null);
+  const ambientLightRef = useRef<THREE.AmbientLight | null>(null);
+  const dirLightRef = useRef<THREE.DirectionalLight | null>(null);
   const isDraggingRef = useRef<boolean>(false);
   const previousMousePositionRef = useRef<{ x: number; y: number }>({ x: 0, y: 0 });
 
@@ -119,10 +123,12 @@ export const ThreeCanvas: React.FC<ThreeCanvasProps> = () => {
     // Lighting
     const ambientLight = new THREE.AmbientLight(0xffffff, 0.4);
     scene.add(ambientLight);
+    ambientLightRef.current = ambientLight;
 
     const dirLight = new THREE.DirectionalLight(0xffffff, 1.2);
     dirLight.position.set(5, 8, 5);
     scene.add(dirLight);
+    dirLightRef.current = dirLight;
 
     const pointLight = new THREE.PointLight(0x00f0ff, 2.5, 10);
     pointLight.position.set(-3, 2, 2);
@@ -276,6 +282,34 @@ export const ThreeCanvas: React.FC<ThreeCanvasProps> = () => {
     };
     pointLightRef.current.color.setHex(colors[lightPreset]);
   }, [lightPreset]);
+
+  // Adapt 3D materials & lighting when theme changes between dark and light mode
+  useEffect(() => {
+    if (!meshGroupRef.current) return;
+    const solidMesh = meshGroupRef.current.getObjectByName('solidMesh') as THREE.Mesh | undefined;
+    const wireMesh = meshGroupRef.current.getObjectByName('wireMesh') as THREE.Mesh | undefined;
+    const pointsMesh = meshGroupRef.current.getObjectByName('pointsMesh') as THREE.Points | undefined;
+    const isLight = theme === 'light';
+
+    if (ambientLightRef.current) {
+      ambientLightRef.current.intensity = isLight ? 0.75 : 0.4;
+    }
+    if (dirLightRef.current) {
+      dirLightRef.current.intensity = isLight ? 1.4 : 1.2;
+    }
+    if (solidMesh && solidMesh.material instanceof THREE.MeshStandardMaterial) {
+      solidMesh.material.color.setHex(isLight ? 0x475569 : 0x1a2130);
+      solidMesh.material.metalness = isLight ? 0.7 : 0.85;
+      solidMesh.material.roughness = isLight ? 0.35 : 0.25;
+    }
+    if (wireMesh && wireMesh.material instanceof THREE.MeshBasicMaterial) {
+      wireMesh.material.color.setHex(isLight ? 0x0284c7 : 0x00f0ff);
+      wireMesh.material.opacity = isLight ? 0.75 : 0.85;
+    }
+    if (pointsMesh && pointsMesh.material instanceof THREE.PointsMaterial) {
+      pointsMesh.material.color.setHex(isLight ? 0x0284c7 : 0x00f0ff);
+    }
+  }, [theme]);
 
   return (
     <div className="three-viewport-container">
